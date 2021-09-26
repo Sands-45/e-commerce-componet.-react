@@ -41,7 +41,7 @@ const OrderSummary = ({ cart, setCart }) => {
           </button>
         </div>
         <div className="col-span-2">
-          <h3 className="text-md text-center text-[#ffc300] m-auto font-bold">
+          <h3 className="text-sm text-[#ffc300]">
             {cartItem.item}
           </h3>
         </div>
@@ -55,7 +55,7 @@ const OrderSummary = ({ cart, setCart }) => {
   });
   return (
     <>
-      <h1 className="text-2xl text-[#ffc300] mt-2 text-center uppercase font-bold font-mono">
+      <h1 className="text-2xl text-[#ffc300] mt-6 text-center uppercase font-bold font-mono">
         Order Summary
       </h1>
       <div className="row-span-4">{cartSummary}</div>
