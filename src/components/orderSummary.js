@@ -12,7 +12,7 @@ const OrderSummary = ({ cart, setCart }) => {
             onClick={() =>
               setCart(
                 cart.map((item) => {
-                  return item.count !== 1
+                  return item.id === cartItem.id && item.count !== 1
                     ? { ...item, count: item.count - 1 }
                     : item;
                 })
@@ -29,7 +29,9 @@ const OrderSummary = ({ cart, setCart }) => {
             onClick={() =>
               setCart(
                 cart.map((item) => {
-                  return { ...item, count: item.count + 1 };
+                  return item.id === cartItem.id
+                    ? { ...item, count: item.count + 1 }
+                    : item;
                 })
               )
             }
