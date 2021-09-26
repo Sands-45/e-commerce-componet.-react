@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import OrderSummary from "./orderSummary"
 import cartIcon from "./img/cartIcon.svg";
 

@@ -1,4 +1,3 @@
-import { countBy } from "lodash";
 import { Link } from "react-router-dom";
 import itemsInCart from "./img/itemsInCart.svg";
 
