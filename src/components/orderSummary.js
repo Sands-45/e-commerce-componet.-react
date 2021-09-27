@@ -18,11 +18,11 @@ const OrderSummary = ({ cart, setCart }) => {
                 })
               )
             }
-            className="bg-[#ffc300] h-10 w-8 p-1 rounded-md hover:opacity-50 transition-opacity duration-500 text-lg font-bold"
+            className="bg-[#ffc300] h-8 w-8 rounded-md hover:opacity-50 transition-opacity duration-500 text-lg font-bold"
           >
             -
           </button>
-          <small className="items-center flex text-lg  text-white">
+          <small className="items-center flex text-sm  text-white">
             {cartItem.count}
           </small>
           <button
@@ -35,18 +35,16 @@ const OrderSummary = ({ cart, setCart }) => {
                 })
               )
             }
-            className="bg-[#ffc300] h-10 w-8 p-1  rounded-md hover:opacity-50 transition-opacity duration-500 text-lg font-bold"
+            className="bg-[#ffc300] h-8 w-8 rounded-md hover:opacity-50 transition-opacity duration-500 text-lg font-bold"
           >
             +
           </button>
         </div>
-        <div className="col-span-2">
-          <h3 className="text-sm text-[#ffc300]">
-            {cartItem.item}
-          </h3>
+        <div className="col-span-2 flex items-center">
+          <p className="text-[12px] text-[#ffc300]">{cartItem.item}</p>
         </div>
         <div className="col-span-1 flex items-center">
-          <p className="text-center text-white m-auto">{`R ${(
+          <p className="text-center text-sm text-white m-auto">{`R ${(
             cartItem.price * cartItem.count
           ).toFixed(2)}`}</p>
         </div>
@@ -58,7 +56,7 @@ const OrderSummary = ({ cart, setCart }) => {
       <h1 className="text-2xl text-[#ffc300] mt-6 text-center uppercase font-bold font-mono">
         Order Summary
       </h1>
-      <div className="row-span-4">{cartSummary}</div>
+      <div className="row-span-4 max-h-80 overflow-hidden">{cartSummary}</div>
       <div className="row-span-1 flex justify-center items-end">
         <button className="bg-[#ffc300] w-[80%] mb-5 flex justify-center p-2 rounded-md hover:opacity-50 transition-opacity duration-500 font-bold">
           Check-Out
