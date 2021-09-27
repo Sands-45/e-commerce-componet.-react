@@ -11,7 +11,7 @@ const Menu = ({ products, cart, setCart }) => {
       </div>
       <div
         style={{ backgroundImage: `url(${cartIcon})` }}
-        className="col-span-2 w-full h-full bg-gray-900 rounded-lg bg-no-repeat bg-center grid grid-rows-5 p-2"
+        className="col-span-2 w-full max-h-[35rem] bg-gray-900 rounded-lg bg-no-repeat bg-center grid grid-rows-5 p-2"
       >
         <OrderSummary cart={cart} setCart={setCart} />
       </div>

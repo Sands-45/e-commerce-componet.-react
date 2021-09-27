@@ -7,6 +7,8 @@ import imgOne from "./components/img/img-1.png";
 import imgTwo from "./components/img/img-2.png";
 import imgThree from "./components/img/img-3.png";
 import imgFour from "./components/img/img-4.png";
+import imgFive from "./components/img/img-5.png";
+import imgSix from "./components/img/img-6.png";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -42,6 +44,22 @@ function App() {
       id: 3,
       count: 1,
       img: imgFour,
+    },
+    {
+      item: "Riff Wireless Bluetooth Headsets",
+      price: "799.90",
+      inStock: 5,
+      id: 4,
+      count: 1,
+      img: imgFive,
+    },
+    {
+      item: "Galaxy Buds Live Charging Case & Earbud",
+      price: "599.90",
+      inStock: 5,
+      id: 5,
+      count: 1,
+      img: imgSix,
     },
   ];
 
