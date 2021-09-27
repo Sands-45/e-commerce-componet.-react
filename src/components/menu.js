@@ -4,8 +4,8 @@ import cartIcon from "./img/cartIcon.svg";
 
 const Menu = ({ products, cart, setCart }) => {
   return (
-    <div className="grid grid-cols-7 md:grid-cols-7 gap-2 w-[90%] xl:w-[80%] h-[40rem] m-auto pt-24">
-      <div className="col-span-6 lg:col-span-4 xl:col-span-4 grid grid-cols-4 gap-2 w-full h-full bg-gray-900 rounded-lg p-2">
+    <div className="grid grid-cols-7 md:grid-cols-7 gap-2 w-[90%] h-[40rem] m-auto pt-24">
+      <div className="col-span-6 lg:col-span-4 xl:col-span-5 grid grid-cols-4 gap-2 w-full h-full bg-gray-900 rounded-lg p-2">
         <Item products={products} cart={cart} setCart={setCart} />
       </div>
       <div
@@ -40,7 +40,7 @@ const Item = ({ products, cart, setCart }) => {
       >
         <div className="col-span-1 p-1">
           <img
-            className="h-full transform rotate-12 p-2 m-auto"
+            className="h-full max-h-[10rem] transform rotate-12 p-2 m-auto"
             src={product.img}
             alt="img"
           />
@@ -53,12 +53,14 @@ const Item = ({ products, cart, setCart }) => {
             {product.item}
           </h3>
           <p className="text-center text-white">{`R ${product.price}`}</p>
-          <button
-            onClick={() => UpdateCart(product.id)}
-            className="bg-gray-700 text-[#ffc300]  flex justify-center text-[10px] lg:text-md p-2 rounded-md hover:opacity-50 transition-opacity duration-500 font-bold"
-          >
-            Add To Cart
-          </button>
+          <div className="flex justify-center">
+            <button
+              onClick={() => UpdateCart(product.id)}
+              className="bg-gray-700 text-[#ffc300] max-w-[5rem]  text-[10px] lg:text-md p-2 rounded-md hover:opacity-50 transition-opacity duration-500 font-bold"
+            >
+              Add To Cart
+            </button>
+          </div>
         </div>
       </div>
     );

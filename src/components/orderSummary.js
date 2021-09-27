@@ -14,7 +14,7 @@ const OrderSummary = ({ cart, setCart }) => {
         key={index}
         className="grid grid-cols-6 p-2 m-2 rounded-md bg-[#4040412d]"
       >
-        <div className="flex items-center space-x-4 col-span-2">
+        <div className="flex items-center space-x-2 col-span-2">
           <button
             onClick={() =>
               setCart(
