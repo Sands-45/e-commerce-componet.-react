@@ -65,7 +65,7 @@ function App() {
 
   return (
     <Router>
-      <div className="h-screen text-gray-900 w-screen bg-gray-800 relative">
+      <div className="h-[210rem] md:h-[70rem] flex justify-center text-gray-900 w-screen bg-gray-800 relative">
         <Navbar cart={cart} />
         <div className="container">
           <Switch>
