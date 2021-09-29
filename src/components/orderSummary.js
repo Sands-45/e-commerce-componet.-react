@@ -69,8 +69,8 @@ const OrderSummary = ({ cart, setCart }) => {
 
   const items = () => {
     let total = 0;
-    let cartItem = cart.map((item) => {
-      total += parseFloat(item.price);
+    cart.map((item) => {
+     return  total += parseFloat(item.price);
     });
     return total.toFixed(2);
   };
