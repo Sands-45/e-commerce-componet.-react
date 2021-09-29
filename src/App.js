@@ -15,7 +15,7 @@ function App() {
   const products = [
     {
       item: "Sands_45 Wireless Earbuds",
-      price: "159.90",
+      price: 159.90,
       inStock: 5,
       id: 0,
       count: 1,
@@ -23,7 +23,7 @@ function App() {
     },
     {
       item: "Sands_45 V23 Wireless Earbuds",
-      price: "99.90",
+      price: 99.90,
       inStock: 5,
       id: 1,
       count: 1,
@@ -31,7 +31,7 @@ function App() {
     },
     {
       item: "Sands Scorpio Series True Wireless Earphones",
-      price: "199.90",
+      price: 199.90,
       inStock: 5,
       id: 2,
       count: 1,
@@ -39,7 +39,7 @@ function App() {
     },
     {
       item: "MK Wireless Touch Control Stereo Earbuds",
-      price: "259.90",
+      price: 259.90,
       inStock: 5,
       id: 3,
       count: 1,
@@ -47,7 +47,7 @@ function App() {
     },
     {
       item: "Riff Wireless Bluetooth Headsets",
-      price: "799.90",
+      price: 799.90,
       inStock: 5,
       id: 4,
       count: 1,
@@ -55,7 +55,7 @@ function App() {
     },
     {
       item: "Galaxy Buds Live Charging Case & Earbud",
-      price: "599.90",
+      price: 599.90,
       inStock: 5,
       id: 5,
       count: 1,
