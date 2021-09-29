@@ -69,12 +69,12 @@ const OrderSummary = ({ cart, setCart }) => {
 
   const items = () => {
     let total = 0;
-    let cartItem = cart.map((item)=>{
-     total += parseFloat(item.price)
-    })
-    return total.toFixed(2)
+    let cartItem = cart.map((item) => {
+      total += parseFloat(item.price);
+    });
+    return total.toFixed(2);
   };
- 
+
   return (
     <>
       <div className="row-span-4 my-4 h-[27.5rem] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800">
@@ -84,8 +84,9 @@ const OrderSummary = ({ cart, setCart }) => {
         {cartSummary}
       </div>
       <div className="row-span-1 flex justify-center items-end">
-        <button className="bg-[#ffc300] w-[80%] mb-5 flex justify-center p-2 rounded-md hover:opacity-50 transition-opacity duration-500 font-bold">
-          Check-Out {items()}
+        <button className="bg-[#ffc300] w-[80%] mb-5 flex relative p-2 rounded-md hover:opacity-50 transition-opacity duration-500 font-bold">
+          Check-Out{" "}
+          <span className="absolute right-0 mr-2">{`R ${items()}`}</span>
         </button>
       </div>
     </>
