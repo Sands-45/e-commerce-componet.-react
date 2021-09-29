@@ -1,7 +1,8 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import deleteIcon from "./img/deleteIcon.svg";
 
-const OrderSummary = ({ cart, setCart }) => {
+const OrderSummary = ({ cart, setCart, items }) => {
   const deleteItem = (id) => {
     const newCart = cart.filter((item) => item.id !== id);
     setCart(newCart);
@@ -67,14 +68,6 @@ const OrderSummary = ({ cart, setCart }) => {
     );
   });
 
-  const items = () => {
-    let total = 0;
-    cart.map((item) => {
-     return  total += parseFloat(item.price) * item.count;
-    });
-    return total.toFixed(2);
-  };
-
   return (
     <>
       <div className="row-span-4 my-4 h-[27.5rem] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800">
@@ -83,11 +76,13 @@ const OrderSummary = ({ cart, setCart }) => {
         </h2>
         {cartSummary}
       </div>
-      <div className="row-span-1 flex justify-center items-end">
-        <button className="bg-[#ffc300] w-[80%] mb-5 flex relative p-2 rounded-md hover:opacity-50 transition-opacity duration-500 font-bold">
-          Check-Out{" "}
-          <span className="absolute right-0 mr-2">{`R ${items()}`}</span>
-        </button>
+      <div className="row-span-1">
+        <Link className="flex justify-center" to="/checkout">
+          <button className="bg-[#ffc300] w-[80%] flex relative p-2 rounded-md hover:opacity-50 transition-opacity duration-500 font-bold">
+            Check-Out{" "}
+            <span className="absolute right-0 mr-2">{`R ${items()}`}</span>
+          </button>
+        </Link>
       </div>
     </>
   );

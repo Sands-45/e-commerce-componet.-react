@@ -2,7 +2,7 @@ import React from "react";
 import OrderSummary from "./orderSummary";
 import cartIcon from "./img/cartIcon.svg";
 
-const Menu = ({ products, cart, setCart }) => {
+const Menu = ({ products, cart, setCart, items }) => {
   return (
     <div className="grid grid-cols-7 md:grid-cols-7 gap-2 w-[90%] h-[40rem] m-auto pt-24">
       <div className="col-span-6 lg:col-span-4 xl:col-span-5 grid grid-cols-4 gap-2 w-full h-full bg-gray-900 rounded-lg p-2">
@@ -10,9 +10,9 @@ const Menu = ({ products, cart, setCart }) => {
       </div>
       <div
         style={{ backgroundImage: `url(${cartIcon})` }}
-        className="col-span-6 lg:col-span-3 xl:col-span-2 w-full max-h-[25rem] lg:max-h-[35rem] bg-gray-900 rounded-lg bg-no-repeat bg-center grid grid-rows-5 p-2"
+        className="col-span-6 lg:col-span-3 xl:col-span-2 w-full max-h-[25rem] lg:max-h-[40rem] bg-gray-900 rounded-lg bg-no-repeat bg-center grid grid-rows-5 p-2"
       >
-        <OrderSummary cart={cart} setCart={setCart} />
+        <OrderSummary cart={cart} setCart={setCart} items={items} />
       </div>
     </div>
   );

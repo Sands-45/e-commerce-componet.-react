@@ -63,6 +63,14 @@ function App() {
     },
   ];
 
+  const items = () => {
+    let total = 0;
+    cart.map((item) => {
+      return (total += parseFloat(item.price) * item.count);
+    });
+    return total.toFixed(2);
+  };
+
   return (
     <Router>
       <div className="h-[210rem] md:h-[70rem] flex justify-center text-gray-900 w-screen bg-gray-800 relative select-none">
@@ -70,10 +78,10 @@ function App() {
         <div className="container">
           <Switch>
             <Route exact path="/">
-              <Menu products={products} cart={cart} setCart={setCart} />
+              <Menu products={products} cart={cart} setCart={setCart} items={items} />
             </Route>
             <Route path="/checkout">
-              <Checkout />
+              <Checkout cart={cart} setCart={setCart} items={items} />
             </Route>
           </Switch>
         </div>
