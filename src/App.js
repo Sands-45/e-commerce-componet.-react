@@ -15,54 +15,61 @@ function App() {
   const products = [
     {
       item: "Sands_45 Wireless Earbuds",
-      price: 159.90,
+      price: 159.9,
       inStock: 5,
+      discount: 0,
       id: 0,
       count: 1,
       img: imgOne,
     },
     {
       item: "Sands_45 V23 Wireless Earbuds",
-      price: 99.90,
+      price: 99.9,
       inStock: 5,
+      discount: 0,
       id: 1,
       count: 1,
       img: imgTwo,
     },
     {
       item: "Sands Scorpio Series True Wireless Earphones",
-      price: 199.90,
+      price: 199.9,
       inStock: 5,
+      discount: 10,
       id: 2,
       count: 1,
       img: imgThree,
     },
     {
       item: "MK Wireless Touch Control Stereo Earbuds",
-      price: 259.90,
+      price: 259.9,
       inStock: 5,
+      discount: 0,
       id: 3,
       count: 1,
       img: imgFour,
     },
     {
       item: "Riff Wireless Bluetooth Headsets",
-      price: 799.90,
+      price: 799.9,
       inStock: 5,
+      discount: 5,
       id: 4,
       count: 1,
       img: imgFive,
     },
     {
       item: "Galaxy Buds Live Charging Case & Earbud",
-      price: 599.90,
+      price: 599.9,
       inStock: 5,
+      discount: 8,
       id: 5,
       count: 1,
       img: imgSix,
     },
   ];
 
+  //Total=============
   const items = () => {
     let total = 0;
     cart.map((item) => {
@@ -70,6 +77,20 @@ function App() {
     });
     return total.toFixed(2);
   };
+  // Discount================
+  const discount = () => {
+    let discount = 0;
+    cart.map((item) => {
+      return (discount += (item.discount * item.count) / item.count);
+    });
+    return ((discount / 100) * items()).toFixed(2);
+  };
+
+  const discount_percentage = ()=>{
+    let discount = 0;
+    cart.map((item) => discount += (item.discount * item.count)/item.count);
+    return discount
+  } 
 
   return (
     <Router>
@@ -78,10 +99,21 @@ function App() {
         <div className="container">
           <Switch>
             <Route exact path="/">
-              <Menu products={products} cart={cart} setCart={setCart} items={items} />
+              <Menu
+                products={products}
+                cart={cart}
+                setCart={setCart}
+                items={items}
+              />
             </Route>
             <Route path="/checkout">
-              <Checkout cart={cart} setCart={setCart} items={items} />
+              <Checkout
+                cart={cart}
+                setCart={setCart}
+                items={items}
+                discount={discount}
+                discount_percentage={discount_percentage}
+              />
             </Route>
           </Switch>
         </div>
